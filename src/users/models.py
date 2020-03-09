@@ -9,6 +9,7 @@ class User(AbstractUser):
 
     class Meta:
         db_table = "users"
+        ordering = ("-id",)
 
     def __str__(self) -> str:
         return self.username
