@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load render_table from django_tables2 %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container">
+{% bootstrap_messages %}
+<form method="post" action="{% url 'login' %}" up-delay=111>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    {% endbuttons %}
+</form>
+</div>
+{% endblock %}
+{% block bootstrap4_extra_script %}
+{% endblock %}
